@@ -7,7 +7,7 @@ console.log("Worker is starting up...");
 
 app.get("/api/", (c) => c.json({ name: "Cloudflare" }));
 
-app.get("/api/hello", async (c, req) => {
+app.get("/api/hello", async (c) => {
     const cache = caches.default;
 
     // Use the incoming request as the key
