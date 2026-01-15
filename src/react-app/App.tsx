@@ -59,6 +59,19 @@ function App() {
 				</p>
 			</div>
 			<p className="read-the-docs">Click on the logos to learn more</p>
+
+			<div className="card">
+				<button
+					onClick={() => {
+						fetch("/api/hello")
+							.then((res) => res.json() as Promise<{ message: string; time: string }>)
+							.then((data) => console.log(data));
+					}}
+					aria-label="get name"
+				>
+					Say Hello
+				</button>
+			</div>
 		</>
 	);
 }
